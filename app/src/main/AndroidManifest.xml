@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
         android:label="Controle de Estoque"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        android:theme="@style/Theme.EstoqueApp">
 
+        <!-- Activity Principal -->
         <activity
             android:name="com.estoque.app.ui.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.EstoqueApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Activity de Cadastro de Produto -->
+        <activity
+            android:name="com.estoque.app.ui.addproduto.AddProdutoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EstoqueApp" />
 
     </application>
 
