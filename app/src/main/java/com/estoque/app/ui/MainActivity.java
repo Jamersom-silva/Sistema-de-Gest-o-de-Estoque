@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import com.estoque.app.R;
 import com.estoque.app.ui.addproduto.AddProdutoActivity;
+import com.estoque.app.ui.listaprodutos.ListaProdutosActivity;
 import com.estoque.app.viewmodel.ProdutoViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             if (id == R.id.nav_home) {
                 return true;
             } else if (id == R.id.nav_produtos) {
-                startActivity(new Intent(MainActivity.this, AddProdutoActivity.class));
+                startActivity(new Intent(MainActivity.this, ListaProdutosActivity.class));
                 return true;
             }
             return false;
