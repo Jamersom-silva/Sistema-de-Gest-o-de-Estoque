@@ -1,5 +1,5 @@
 package com.estoque.app.data.local;
-
+import androidx.sqlite.db.SupportSQLiteDatabase;
 import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
