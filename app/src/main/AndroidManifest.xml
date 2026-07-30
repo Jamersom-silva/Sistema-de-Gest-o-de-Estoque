@@ -25,6 +25,11 @@
             android:windowSoftInputMode="adjustResize"
             android:theme="@style/Theme.EstoqueApp" />
 
+        <activity
+            android:name="com.estoque.app.ui.listaprodutos.ListaProdutosActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EstoqueApp" />
+
     </application>
 
 </manifest>

@@ -86,38 +86,41 @@
                     </FrameLayout>
                 </LinearLayout>
 
-                <!-- Card de Busca -->
-                <com.google.android.material.card.MaterialCardView
+                <!-- Campo de Busca -->
+                <LinearLayout
+                    android:id="@+id/layout_busca"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginTop="20dp"
-                    app:cardElevation="0dp"
-                    app:cardCornerRadius="12dp"
                     android:background="@drawable/bg_search"
-                    android:clickable="true">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/ic_menu_search"
+                        android:tint="#94A3B8" />
+
+                    <EditText
+                        android:id="@+id/edit_busca"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:paddingHorizontal="16dp">
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:background="@null"
+                        android:hint="Buscar produto..."
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#94A3B8"
+                        android:textSize="14sp"
+                        android:inputType="text"
+                        android:imeOptions="actionSearch"
+                        android:singleLine="true" />
+                </LinearLayout>
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@android:drawable/ic_menu_search"
-                            android:tint="#94A3B8" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Buscar produto..."
-                            android:textColor="#64748B"
-                            android:textSize="14sp"
-                            android:layout_marginStart="12dp" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
             <!-- ============ CONTEÚDO PRINCIPAL ============ -->

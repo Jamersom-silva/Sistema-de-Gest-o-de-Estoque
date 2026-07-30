@@ -1,9 +1,10 @@
 package com.estoque.app.ui.addproduto;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -16,6 +17,7 @@ public class AddProdutoActivity extends AppCompatActivity {
     private EditText editNome, editCodigoBarras, editQuantidade,
             editPrecoCusto, editPrecoVenda, editDescricao;
     private Button btnSalvar;
+    private LinearLayout btnVoltar;
     private ProdutoViewModel produtoViewModel;
 
     @Override
@@ -24,6 +26,10 @@ public class AddProdutoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_produto);
 
         produtoViewModel = new ViewModelProvider(this).get(ProdutoViewModel.class);
+
+        // Botão Voltar
+        btnVoltar = findViewById(R.id.btn_voltar);
+        btnVoltar.setOnClickListener(v -> finish());
 
         // Inicializar campos
         editNome = findViewById(R.id.edit_nome);
@@ -43,7 +49,6 @@ public class AddProdutoActivity extends AppCompatActivity {
         String quantidadeStr = editQuantidade.getText().toString().trim();
         String precoVendaStr = editPrecoVenda.getText().toString().trim();
 
-        // Validação simples
         if (nome.isEmpty() || quantidadeStr.isEmpty() || precoVendaStr.isEmpty()) {
             Toast.makeText(this, "Preencha os campos obrigatórios", Toast.LENGTH_SHORT).show();
             return;
@@ -52,7 +57,6 @@ public class AddProdutoActivity extends AppCompatActivity {
         int quantidade = Integer.parseInt(quantidadeStr);
         double precoVenda = Double.parseDouble(precoVendaStr);
 
-        // Criar produto (categoria 1 = Eletrônicos por padrão)
         Produto produto = new Produto(nome, quantidade, precoVenda, 1);
 
         if (!codigoBarras.isEmpty()) {
