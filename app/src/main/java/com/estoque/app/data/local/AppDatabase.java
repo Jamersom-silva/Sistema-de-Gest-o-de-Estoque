@@ -1,9 +1,11 @@
 package com.estoque.app.data.local;
 
 import android.content.Context;
+import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.estoque.app.data.local.dao.ProdutoDao;
 import com.estoque.app.data.local.dao.CategoriaDao;
 import com.estoque.app.data.local.entity.Produto;
@@ -47,7 +49,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private static RoomDatabase.Callback popularBancoDados() {
         return new RoomDatabase.Callback() {
             @Override
-            public void onCreate(@androidx.annotation.NonNull SupportSQLiteDatabase db) {
+            public void onCreate(@NonNull SupportSQLiteDatabase db) {
                 super.onCreate(db);
 
                 databaseWriteExecutor.execute(() -> {

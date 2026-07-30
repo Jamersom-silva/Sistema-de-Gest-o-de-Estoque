@@ -5,16 +5,17 @@ import androidx.room.PrimaryKey;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.ColumnInfo;
+import androidx.room.Ignore;
 
 @Entity(
         tableName = "produtos",
         foreignKeys = @ForeignKey(
                 entity = Categoria.class,
                 parentColumns = "id",
-                childColumns = "categoriaId",
+                childColumns = "categoria_id",  // ✅ CORRIGIDO
                 onDelete = ForeignKey.CASCADE
         ),
-        indices = {@Index("categoriaId")}
+        indices = {@Index("categoria_id")}  // ✅ CORRIGIDO
 )
 public class Produto {
     @PrimaryKey(autoGenerate = true)
@@ -44,6 +45,8 @@ public class Produto {
     // Construtor vazio (obrigatório para Room)
     public Produto() {}
 
+    // Construtor com parâmetros (ignorado pelo Room)
+    @Ignore
     public Produto(String nome, int quantidade, double precoVenda, long categoriaId) {
         this.nome = nome;
         this.quantidade = quantidade;

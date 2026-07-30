@@ -1,4 +1,3 @@
-# Criar .gitignore
 cat > .gitignore << 'EOF'
 # Android
 *.iml
@@ -15,20 +14,18 @@ local.properties
 # Arquivos de build
 /app/build
 /app/release
+build/
 
-# Arquivos do IntelliJ
+# Arquivos do IntelliJ/Android Studio
 *.iws
 *.ipr
 *.iml
 .idea/
-
-# Arquivos do Gradle
-.gradle/
-build/
-
-# Arquivos de debug
 *.log
-*.tmp
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
 
 # APKs
 *.apk
@@ -37,4 +34,8 @@ build/
 # Keystore
 *.jks
 *.keystore
+
+# Arquivos de sistema
+Thumbs.db
+.DS_Store
 EOF

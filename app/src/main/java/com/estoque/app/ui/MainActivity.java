@@ -4,15 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.estoque.app.R;
 import com.estoque.app.ui.adapters.ProdutoAdapter;
+import com.estoque.app.ui.addproduto.AddProdutoActivity;
 import com.estoque.app.viewmodel.ProdutoViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -24,10 +23,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Configurar Toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         // Configurar RecyclerView
         RecyclerView recyclerView = findViewById(R.id.recycler_view);

@@ -23,7 +23,7 @@ public interface ProdutoDao {
     @Query("SELECT * FROM produtos WHERE nome LIKE '%' || :searchQuery || '%' OR codigoBarras LIKE '%' || :searchQuery || '%'")
     LiveData<List<Produto>> searchProdutos(String searchQuery);
 
-    @Query("SELECT * FROM produtos WHERE categoriaId = :categoriaId")
+    @Query("SELECT * FROM produtos WHERE categoria_id = :categoriaId")  // ✅ CORRIGIDO
     LiveData<List<Produto>> getProdutosPorCategoria(long categoriaId);
 
     @Query("UPDATE produtos SET quantidade = quantidade + :quantidade WHERE id = :produtoId")
@@ -32,6 +32,6 @@ public interface ProdutoDao {
     @Query("UPDATE produtos SET quantidade = quantidade - :quantidade WHERE id = :produtoId AND quantidade >= :quantidade")
     void removerEstoque(long produtoId, int quantidade);
 
-    @Query("SELECT * FROM produtos WHERE quantidade <= quantidadeMinima")
+    @Query("SELECT * FROM produtos WHERE quantidade <= quantidade_minima")  // ✅ CORRIGIDO
     LiveData<List<Produto>> getProdutosBaixoEstoque();
 }
